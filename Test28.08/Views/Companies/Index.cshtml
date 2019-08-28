@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Test28._08.Models.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+        @Html.ActionLink("Record", "Create", "Registers",new {Id= item.Id},null)
+      
+        </td>
+    </tr>
+}
+
+</table>
